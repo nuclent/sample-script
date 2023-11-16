@@ -1,0 +1,65 @@
+{
+  "name": "simple-data-source",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/simple-data-source/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/simple-data-source",
+        "main": "apps/simple-data-source/src/main.ts",
+        "tsConfig": "apps/simple-data-source/tsconfig.app.json",
+        "webpackConfig": "webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "namedChunks": false,
+          "commonChunk": false,
+          "extractCss": false,
+          "extractLicenses": false,
+          "runtimeChunk": false,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "simple-data-source:build",
+        "inspect": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "simple-data-source:build:development"
+        },
+        "production": {
+          "buildTarget": "simple-data-source:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/simple-data-source/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/simple-data-source/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
