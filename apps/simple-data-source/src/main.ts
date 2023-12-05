@@ -47,7 +47,6 @@ class DataSource extends ExternalDataSource {
     const url = this.getUrl(context?.env);
     const request = await fetch(url, { method: 'get' });
     const response: ResType[] = await request.json();
-    console.info(response);
     const data: GetListResponse[0] = response
       .filter((i) => (searchText ? i.name.includes(searchText) : true))
       .map((r) => this.toDataType(r, url));

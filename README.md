@@ -1,31 +1,30 @@
 # SampleScript
 
-## Generate code
+## Structure
 
-If you happen to use Nx plugins, you can leverage code generators that might come with it.
+- `apps/simple-action-script`: Sample code to make action script for action metadata script
+  This action will make request to **https://jsonplaceholder.typicode.com** and handle body payload:
 
-Run `nx list` to get a list of available plugins and whether they have generators. Then run `nx list <plugin-name>` to see what generators are available.
+  - path: string/optional path to request, default: `users`
+  - method: string/optional request method, default: `get`
+  - body: string/optional request body, default: `null`
+  - headers: object/optional request headers, default `{}`
 
-Learn more about [Nx generators on the docs](https://nx.dev/plugin-features/use-code-generators).
+- `apps/simple-data-source`: Sample code to make external data source script
+  This script is for handling `users` **https://jsonplaceholder.typicode.com** as external source with all source action
+  - get list users
+  - get user by id
+  - create new user
+  - update user by id
+  - delete user by id
 
-## Running tasks
+## How to build
 
-To execute tasks with Nx use the following syntax:
+- Run `yarn nx build <project-name>`
+  Ex: _yarn nx build simple-data-source_
+- The bundled code can be locate in `dist/apps/<project-name>/main.js`
+  Please copy all scripts inside that file and put it to script section in nFlow action-meta/data-source UI-builder
 
-```
-nx <target> <project> <...options>
-```
+## How to test
 
-You can also run multiple targets:
-
-```
-nx run-many -t <target1> <target2>
-```
-
-..or add `-p` to filter specific projects
-
-```
-nx run-many -t <target1> <target2> -p <proj1> <proj2>
-```
-
-Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/core-features/run-tasks).
+_In dev_
