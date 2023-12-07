@@ -27,4 +27,5 @@
 
 ## How to test
 
-_In dev_
+- Run `yarn nx test <project-name>`
+  Ex: _yarn nx test simple-data-source_

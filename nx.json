@@ -16,10 +16,10 @@
       ]
     },
     "e2e": {
-      "cache": true
+      "cache": false
     },
     "@nx/jest:jest": {
-      "cache": true,
+      "cache": false,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "options": {
         "passWithNoTests": true
