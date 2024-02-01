@@ -1425,9 +1425,9 @@
     "@nx/workspace" "17.3.0"
 
 "@nuclent/nflow-scripts@^0.1":
-  version "0.1.3"
-  resolved "https://npm.pkg.github.com/download/@nuclent/nflow-scripts/0.1.3/fac92d205ac61974e713608e441082bd017fb3d5#fac92d205ac61974e713608e441082bd017fb3d5"
-  integrity sha512-2LRgU7Zk4iUnKUyCU3xbP9e+i8qzOJV+QAz/uLx61cv0hPKCp3j2Iy2xOMcFqWOe2rKDCQ0C1B4x2xe3rLIIBA==
+  version "0.1.4"
+  resolved "https://npm.pkg.github.com/download/@nuclent/nflow-scripts/0.1.4/354c30d6dfb99bdfd9f16dc33ab3078dac8247bd#354c30d6dfb99bdfd9f16dc33ab3078dac8247bd"
+  integrity sha512-hKohhDdJNZ8iAToDI3xoB/IAlVQ9lervh/jZ8S01CJqgccLDNV5cfKDr64pIzHIGjI0oFQcHh1eaBypkkQQU+g==
   dependencies:
     tslib "^2.3.0"
 
