@@ -20,14 +20,17 @@ const mockContext: BaseContext = {
   credential: {
     type: 'custom',
     data: {
-      key: 'value',
+      url: '',
+      credential: {
+        key: 'value',
+      },
     },
   },
   env: {},
 };
 describe('DataSource', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const source: ExternalDataSource = require('./main');
+  const source: ExternalDataSource = require('../../../dist/apps/simple-data-source/main');
 
   it('Get list should OK', async () => {
     const payload: SearchDataQuery = { type: 'offset' };

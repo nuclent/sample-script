@@ -16,14 +16,17 @@ const mockContext: BaseContext = {
   credential: {
     type: 'custom',
     data: {
-      key: 'value',
+      url: 'http://localhost',
+      credential: {
+        key: 'value',
+      },
     },
   },
   env: {},
 };
 describe('DataSource', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const source: ActionMeta = require('./main');
+  const source: ActionMeta = require('../../../dist/apps/simple-action-script/main');
 
   it('should OK', async () => {
     const args: Record<string, unknown> = {};

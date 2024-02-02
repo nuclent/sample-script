@@ -3,7 +3,7 @@ const { IgnorePlugin } = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 
 // Nx plugins for webpack.
-module.exports = composePlugins(withNx(), (config) => ({
+module.exports = composePlugins(withNx({ target: 'node' }), (config) => ({
   ...config,
   target: 'node',
   output: {

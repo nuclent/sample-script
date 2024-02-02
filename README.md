@@ -18,6 +18,13 @@
   - update user by id
   - delete user by id
 
+## Create new app
+
+- Run `yarn gen:app --name=<your-app-name>`
+- Sync config for those files from source `simple-action-script` or `simple-data-source` to your new app
+  - profile.json
+  - tsconfig.spec.json
+
 ## How to build
 
 - Run `yarn nx build <project-name>`
