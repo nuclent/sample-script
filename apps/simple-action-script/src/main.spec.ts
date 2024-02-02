@@ -1,4 +1,5 @@
 import { ActionMeta, BaseContext } from '@nuclent/nflow-scripts';
+import { loadScript } from '@sample-script/test';
 
 const mockContext: BaseContext = {
   apiHost: 'mock.host',
@@ -24,9 +25,11 @@ const mockContext: BaseContext = {
   },
   env: {},
 };
+
 describe('DataSource', () => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const source: ActionMeta = require('../../../dist/apps/simple-action-script/main');
+  const source: ActionMeta = loadScript(
+    `${process.cwd()}/dist/apps/${process.env.NX_TASK_TARGET_PROJECT}/main.js`
+  );
 
   it('should OK', async () => {
     const args: Record<string, unknown> = {};

@@ -3,6 +3,7 @@ import {
   ExternalDataSource,
   SearchDataQuery,
 } from '@nuclent/nflow-scripts';
+import { loadScript } from '@sample-script/test';
 
 const mockContext: BaseContext = {
   apiHost: 'mock.host',
@@ -29,8 +30,9 @@ const mockContext: BaseContext = {
   env: {},
 };
 describe('DataSource', () => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const source: ExternalDataSource = require('../../../dist/apps/simple-data-source/main');
+  const source: ExternalDataSource = loadScript(
+    `${process.cwd()}/dist/apps/${process.env.NX_TASK_TARGET_PROJECT}/main.js`
+  );
 
   it('Get list should OK', async () => {
     const payload: SearchDataQuery = { type: 'offset' };
