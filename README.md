@@ -1,5 +1,9 @@
 # SampleScript
 
+## Requirements:
+- Access nuclent registry
+  - Please follow [Github Package](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-with-a-personal-access-token)
+
 ## Structure
 
 - `apps/simple-action-script`: Sample code to make action script for action metadata script
